@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: redis-master-slaves
+  redis:
+    database: 0
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1
+        min-idle: 0
+
+# redis主从机参数配置
+redis:
+  ms:
+    redis-master:
+      host: 172.16.231.134
+      port: 6379
+      password:
+    redis-slaves:
+      - host: 172.16.231.135
+        port: 6379
+        password:
+      - host: 172.16.231.136
+        port: 6379
+        password:
